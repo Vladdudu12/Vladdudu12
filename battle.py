@@ -124,7 +124,7 @@ def resolve(state, player_move):
     msgs += apply_move(state, "player", player_move)
     if state["cpu"]["hp"] <= 0:
         msgs.append("Foe POLITOED fainted!")
-        msgs.append("DRAGONITE wins! 🎉")
+        msgs.append("DRAGONITE wins!")
         state["over"] = True
         state["message"] = "  ".join(msgs)
         state["turn"] += 1
@@ -341,7 +341,14 @@ def render_readme(state, img_rel="game/battle.png"):
         f"| {cell(mv[2])} | {cell(mv[3])} |\n"
     )
 
-    md = f"""<h1 align="center">⚔️ DRAGONITE vs POLITOED ⚔️</h1>
+    md = f"""
+    <h1 align="center">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/149.gif" width="64px" height="64px" alt="Dragonite">
+        DRAGONITE
+        vs 
+        POLITOED 
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/186.gif" width="64px" height="64px" alt="Politoed">
+    </h1>
 <p align="center"><em>A turn-based Pokémon battle, playable right here on my profile.</em></p>
 
 <p align="center">
