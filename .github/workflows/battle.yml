@@ -1,0 +1,67 @@
+name: Battle
+
+# Fires whenever someone opens an Issue whose title starts with "Battle:".
+# Also runnable by hand from the Actions tab (workflow_dispatch).
+on:
+  issues:
+    types: [opened]
+  workflow_dispatch:
+
+permissions:
+  contents: write   # to commit the updated README / PNG / state
+  issues: write     # to comment on and close the move issue
+
+concurrency:
+  group: pokemon-battle      # serialize moves so two players can't clobber state
+  cancel-in-progress: false
+
+jobs:
+  play:
+    # For issue events, only run on titles like "Battle: outrage"
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      startsWith(github.event.issue.title, 'Battle:')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Pillow
+        run: pip install --quiet pillow
+
+      - name: Parse move from issue title
+        id: move
+        run: |
+          TITLE="${{ github.event.issue.title }}"
+          # Strip the leading "Battle:" and any whitespace -> e.g. "outrage"
+          MOVE="$(echo "$TITLE" | sed 's/^[Bb]attle:[[:space:]]*//' | tr '[:upper:]' '[:lower:]' | xargs)"
+          echo "value=${MOVE:-new}" >> "$GITHUB_OUTPUT"
+
+      - name: Play the turn
+        run: python battle.py --move "${{ steps.move.outputs.value }}"
+
+      - name: Commit the new game state
+        run: |
+          git config user.name  "pokemon-bot"
+          git config user.email "actions@github.com"
+          git add README.md game/battle.png game/state.json
+          git commit -m "Battle: ${{ steps.move.outputs.value }} [skip ci]" || echo "no changes"
+          git push
+
+      - name: Close the move issue
+        if: github.event_name == 'issues'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner, repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: "Move played! Refresh my profile to see the board. ⚔️"
+            });
+            await github.rest.issues.update({
+              owner: context.repo.owner, repo: context.repo.repo,
+              issue_number: context.issue.number, state: "closed"
+            });
