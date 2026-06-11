@@ -1,11 +1,11 @@
 {
   "player": {
-    "hp": 98
+    "hp": 38
   },
   "cpu": {
-    "hp": 86
+    "hp": 38
   },
-  "turn": 1,
-  "message": "DRAGONITE used THUNDERPUNCH!  It's super effective!  POLITOED used ICE BEAM!  It's super effective!",
+  "turn": 2,
+  "message": "DRAGONITE used OUTRAGE!  POLITOED used ICE BEAM!  It's super effective!",
   "over": false
 }
