@@ -12,7 +12,7 @@ How it works:
 
 The art is original, stylized vector drawing (Pillow) - no copyrighted sprites.
 """
-import argparse, json, os, random, math, urllib.parse
+import argparse, json, os, random, math, urllib.parse, glob, time
 from PIL import Image, ImageDraw, ImageFont
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -345,7 +345,7 @@ def render_readme(state, img_rel="game/battle.png"):
 <p align="center"><em>A turn-based Pokémon battle, playable right here on my profile.</em></p>
 
 <p align="center">
-  <img src="{img_rel}?v={cache}" width="640" alt="battle scene"/>
+  <img src="{img_rel}" width="640" alt="battle scene"/>
 </p>
 
 <h3 align="center">{'🏁 Battle over — start a new one below!' if over else "Choose DRAGONITE's move:"}</h3>
@@ -427,9 +427,13 @@ def render(state):
         return frame.convert("RGB")
 
     animated = USE_ANIMATION and (len(pol) > 1 or len(dra) > 1)
+    # Unique filename per render so GitHub's image cache (camo) can't serve a stale copy.
+    stamp = f"{int(time.time())}-{state['turn']}"
     if not animated:
-        compose(0).save(PNG_PATH)
-        return "game/battle.png"
+        rel = f"game/battle-{stamp}.png"
+        compose(0).save(os.path.join(ROOT, rel))
+        _cleanup_frames(rel)
+        return rel
 
     # number of frames: seamless LCM loop when small, else bounded
     n = math.lcm(len(pol), len(dra))
@@ -438,9 +442,21 @@ def render(state):
     base_frames = [compose(i) for i in range(n)]
     pal = base_frames[0].convert("P", palette=Image.ADAPTIVE, colors=256)
     pframes = [f.quantize(palette=pal, dither=Image.Dither.NONE) for f in base_frames]
-    pframes[0].save(GIF_PATH, save_all=True, append_images=pframes[1:],
+    rel = f"game/battle-{stamp}.gif"
+    pframes[0].save(os.path.join(ROOT, rel), save_all=True, append_images=pframes[1:],
                     duration=FRAME_MS, loop=0, optimize=True, disposal=2)
-    return "game/battle.gif"
+    _cleanup_frames(rel)
+    return rel
+
+def _cleanup_frames(keep_rel):
+    """Delete every previous battle image so only the current frame remains."""
+    keep = os.path.abspath(os.path.join(ROOT, keep_rel))
+    pats = ["battle-*.gif", "battle-*.png", "battle.gif", "battle.png"]
+    for pat in pats:
+        for f in glob.glob(os.path.join(ROOT, "game", pat)):
+            if os.path.abspath(f) != keep:
+                try: os.remove(f)
+                except OSError: pass
 
 if __name__ == "__main__":
     os.makedirs(os.path.join(ROOT, "game"), exist_ok=True)
