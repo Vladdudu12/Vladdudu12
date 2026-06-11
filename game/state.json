@@ -1,11 +1,11 @@
 {
   "player": {
-    "hp": 40
+    "hp": 160
   },
   "cpu": {
-    "hp": 0
+    "hp": 150
   },
-  "turn": 3,
-  "message": "DRAGONITE used OUTRAGE!  Foe POLITOED fainted!  DRAGONITE wins!",
-  "over": true
+  "turn": 0,
+  "message": "What will DRAGONITE do?",
+  "over": false
 }
