@@ -1,0 +1,11 @@
+{
+  "player": {
+    "hp": 160
+  },
+  "cpu": {
+    "hp": 150
+  },
+  "turn": 0,
+  "message": "What will DRAGONITE do?",
+  "over": false
+}
