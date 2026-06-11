@@ -1,15 +1,8 @@
-<h1 align="center">
-    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/149.gif" width="64px" height="64px" alt="Dragonite">
-    DRAGONITE
-    vs 
-    POLITOED 
-    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/186.gif" width="64px" height="64px" alt="Politoed">
-</h1>
-
+<h1 align="center">⚔️ DRAGONITE vs POLITOED ⚔️</h1>
 <p align="center"><em>A turn-based Pokémon battle, playable right here on my profile.</em></p>
 
 <p align="center">
-  <img src="game/battle-1781216487-0.png" width="640" alt="battle scene"/>
+  <img src="game/battle-1781216958-0.gif" width="640" alt="battle scene"/>
 </p>
 
 <h3 align="center">Choose DRAGONITE's move:</h3>
