@@ -47,7 +47,7 @@ jobs:
         run: |
           git config user.name  "pokemon-bot"
           git config user.email "actions@github.com"
-          git add README.md game/battle.png game/state.json
+          git add -A                                    # stages png OR gif, plus deletions; respects .gitignore
           git commit -m "Battle: ${{ steps.move.outputs.value }} [skip ci]" || echo "no changes"
           git push
 
