@@ -18,14 +18,14 @@
 
 | | |
 |:--:|:--:|
-| [**OUTRAGE**](https://github.com/YOURNAME/YOURNAME/issues/new?title=Battle%3A%20outrage&body=Just%20press%20the%20green%20Create%20button%20below%20to%20make%20your%20move.%0AA%20bot%20will%20play%20the%20turn%20and%20update%20the%20profile%20in%20a%20few%20seconds.) | [**FIRE PUNCH**](https://github.com/YOURNAME/YOURNAME/issues/new?title=Battle%3A%20fire-punch&body=Just%20press%20the%20green%20Create%20button%20below%20to%20make%20your%20move.%0AA%20bot%20will%20play%20the%20turn%20and%20update%20the%20profile%20in%20a%20few%20seconds.) |
-| [**THUNDERPUNCH**](https://github.com/YOURNAME/YOURNAME/issues/new?title=Battle%3A%20thunderpunch&body=Just%20press%20the%20green%20Create%20button%20below%20to%20make%20your%20move.%0AA%20bot%20will%20play%20the%20turn%20and%20update%20the%20profile%20in%20a%20few%20seconds.) | [**ROOST**](https://github.com/YOURNAME/YOURNAME/issues/new?title=Battle%3A%20roost&body=Just%20press%20the%20green%20Create%20button%20below%20to%20make%20your%20move.%0AA%20bot%20will%20play%20the%20turn%20and%20update%20the%20profile%20in%20a%20few%20seconds.) |
+| [**OUTRAGE**](https://github.com/Vladdudu12/Vladdudu12/issues/new?title=Battle%3A%20outrage&body=Just%20press%20the%20green%20Create%20button%20below%20to%20make%20your%20move.%0AA%20bot%20will%20play%20the%20turn%20and%20update%20the%20profile%20in%20a%20few%20seconds.) | [**FIRE PUNCH**](https://github.com/Vladdudu12/Vladdudu12/issues/new?title=Battle%3A%20fire-punch&body=Just%20press%20the%20green%20Create%20button%20below%20to%20make%20your%20move.%0AA%20bot%20will%20play%20the%20turn%20and%20update%20the%20profile%20in%20a%20few%20seconds.) |
+| [**THUNDERPUNCH**](https://github.com/Vladdudu12/Vladdudu12/issues/new?title=Battle%3A%20thunderpunch&body=Just%20press%20the%20green%20Create%20button%20below%20to%20make%20your%20move.%0AA%20bot%20will%20play%20the%20turn%20and%20update%20the%20profile%20in%20a%20few%20seconds.) | [**ROOST**](https://github.com/Vladdudu12/Vladdudu12/issues/new?title=Battle%3A%20roost&body=Just%20press%20the%20green%20Create%20button%20below%20to%20make%20your%20move.%0AA%20bot%20will%20play%20the%20turn%20and%20update%20the%20profile%20in%20a%20few%20seconds.) |
 
 
 </div>
 
 <p align="center">
-  <a href="https://github.com/YOURNAME/YOURNAME/issues/new?title=Battle%3A%20new&body=Just%20press%20the%20green%20Create%20button%20below%20to%20make%20your%20move.%0AA%20bot%20will%20play%20the%20turn%20and%20update%20the%20profile%20in%20a%20few%20seconds.">🔄 <b>Start a new battle</b></a>
+  <a href="https://github.com/Vladdudu12/Vladdudu12/issues/new?title=Battle%3A%20new&body=Just%20press%20the%20green%20Create%20button%20below%20to%20make%20your%20move.%0AA%20bot%20will%20play%20the%20turn%20and%20update%20the%20profile%20in%20a%20few%20seconds.">🔄 <b>Start a new battle</b></a>
 </p>
 
 ---
