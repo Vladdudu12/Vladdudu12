@@ -325,7 +325,7 @@ def _issue_link(repo, move, label):
     return f"https://github.com/{repo}/issues/new?title={title}&body={body}"
 
 def render_readme(state, img_rel="game/battle.png"):
-    repo = os.environ.get("GITHUB_REPOSITORY", "YOURNAME/YOURNAME")
+    repo = os.environ.get("GITHUB_REPOSITORY", "Vladdudu12/Vladdudu12")
     cache = state["turn"]
     over = state.get("over")
     new_link = _issue_link(repo, "new", "New")

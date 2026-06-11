@@ -2,7 +2,7 @@
 <p align="center"><em>A turn-based Pokémon battle, playable right here on my profile.</em></p>
 
 <p align="center">
-  <img src="game/battle.png?v=0" width="640" alt="battle scene"/>
+  <img src="game/battle.gif?v=0" width="640" alt="battle scene"/>
 </p>
 
 <h3 align="center">Choose DRAGONITE's move:</h3>
