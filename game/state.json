@@ -3,9 +3,9 @@
     "hp": 38
   },
   "cpu": {
-    "hp": 38
+    "hp": 0
   },
-  "turn": 2,
-  "message": "DRAGONITE used OUTRAGE!  POLITOED used ICE BEAM!  It's super effective!",
-  "over": false
+  "turn": 3,
+  "message": "DRAGONITE used OUTRAGE!  Foe POLITOED fainted!  DRAGONITE wins! \ud83c\udf89",
+  "over": true
 }
